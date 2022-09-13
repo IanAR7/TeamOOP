@@ -1,5 +1,5 @@
 # Dungeons and Cards:
-Dungeons and Cards is a prototype roguelike deck-builder game. In this solo adventure you will fight with cards, build your deck and explore the mysterious dungeon. The game will have the main game mechanics. It will include: an enemy, a card battle, 5 cards, 3 objects, an inventory system, a main character with movement and a dungeon.
+Dungeons and Cards is a prototype roguelike deck-builder game. In this solo adventure you will fight with cards, build your deck and explore the mysterious dungeon. It will include: an enemy, a card battle, 5 cards, 3 objects, an inventory system, a main character with movement and a dungeon.
 
 Team:
 -Ian Aguilar @IanAR7
