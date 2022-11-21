@@ -12,6 +12,8 @@ public class GridMovment : MonoBehaviour
     {
         
     }*/
+
+    //SerializField can be changed in the unity engine
     [SerializeField] private float moveTime = 0.14f;
 
     private Vector2 targetPosition;
@@ -21,12 +23,14 @@ public class GridMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        
         xInput = Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
 
+        //to only move the player one square in the  grid like chess
         if((xInput != 0f || yInput != 0f) && !isMoving && Input.anyKeyDown)
         {
+            
             CalculateTargetPosition();
             if (CanMoveToTargetPosition())
             {
@@ -36,6 +40,7 @@ public class GridMovment : MonoBehaviour
         } 
     }
 
+    //moves the player
     IEnumerator Move()
     {
         isMoving = true;
@@ -44,6 +49,7 @@ public class GridMovment : MonoBehaviour
 
         while (timeElapsed < moveTime)
         {
+            //to move the player in the engine
             transform.position = Vector2.Lerp(startPosition, targetPosition, timeElapsed / moveTime);
             timeElapsed += Time.deltaTime;
             yield return null;
@@ -51,7 +57,9 @@ public class GridMovment : MonoBehaviour
         transform.position = targetPosition;
         isMoving = false;
     }
+    
 
+    // moves the player depending on the key pressed
     private void CalculateTargetPosition()
     {
         if(xInput == 1f)
@@ -74,6 +82,7 @@ public class GridMovment : MonoBehaviour
         
     }
 
+    //to see if there is a collider in the position we want to move
     private bool CanMoveToTargetPosition()
     {
         return !Physics2D.OverlapCircle(targetPosition, 0.20f);
