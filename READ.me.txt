@@ -1,0 +1,1 @@
+Descomprimir los .zip para que el .exe funcione
